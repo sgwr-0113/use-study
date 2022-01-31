@@ -1,4 +1,4 @@
-import React from 'react'
-import { Routing } from './routes'
+import React from 'react';
+import { Routing } from './routes';
 
-export const App: React.FC = () => <Routing />
+export const App: React.FC = () => <Routing />;

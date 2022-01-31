@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { RefFocus } from 'components/ref/RefFocus'
-import { RefCompareState } from 'components/ref/RefCompareState'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RefFocus } from 'components/ref/RefFocus';
+import { RefCompareState } from 'components/ref/RefCompareState';
 
 export const Ref: React.FC = () => {
   return (
@@ -15,5 +15,5 @@ export const Ref: React.FC = () => {
         <Link to="/">トップへ戻る</Link>
       </p>
     </>
-  )
-}
+  );
+};

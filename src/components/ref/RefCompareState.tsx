@@ -1,17 +1,17 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
 
 export const RefCompareState: React.FC = () => {
-  const [stateCount, setStateCount] = useState<number>(0)
-  const refCount = useRef<number>(0)
+  const [stateCount, setStateCount] = useState<number>(0);
+  const refCount = useRef<number>(0);
 
   const incrementState = () => {
-    setStateCount((prevCount) => prevCount + 1)
-  }
+    setStateCount((prevCount) => prevCount + 1);
+  };
 
   const incrementRef = () => {
-    refCount.current++
-    console.log('refCount:' + refCount.current)
-  }
+    refCount.current++;
+    console.log('refCount:' + refCount.current);
+  };
 
   return (
     <>
@@ -32,5 +32,5 @@ export const RefCompareState: React.FC = () => {
         <button onClick={incrementRef}>カウントを増やす</button>
       </div>
     </>
-  )
-}
+  );
+};

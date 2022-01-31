@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{ts,tsx} --cache"
+    "lint": "eslint src/**/*.{ts,tsx} --cache",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +58,7 @@
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
     "prettier": "^2.5.1"
   }
 }

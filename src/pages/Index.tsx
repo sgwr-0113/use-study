@@ -8,6 +8,9 @@ export const Index: React.FC = () => {
       <p>
         <Link to="/effect">useEffectを学ぶ</Link>
       </p>
+      <p>
+        <Link to="/ref">useRefを学ぶ</Link>
+      </p>
     </>
   )
 }

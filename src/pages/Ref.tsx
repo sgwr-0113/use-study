@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { RefFocus } from '../components/ref/RefFocus'
+import { RefFocus } from 'components/ref/RefFocus'
 
 export const Ref: React.FC = () => {
   return (

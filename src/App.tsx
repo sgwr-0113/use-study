@@ -1,4 +1,19 @@
 import React from 'react';
-import { Routing } from './routes';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Index } from 'pages/Index';
+import { Memo } from 'pages/Memo';
+import { Ref } from 'pages/Ref';
+import { Header } from 'components/shared/Header';
 
-export const App: React.FC = () => <Routing />;
+export const App = () => {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/memo" element={<Memo />} />
+        <Route path="/ref" element={<Ref />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};

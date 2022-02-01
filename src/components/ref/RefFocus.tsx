@@ -1,4 +1,7 @@
 import React, { useRef } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export const RefFocus: React.FC = () => {
   const inputEl = useRef<HTMLInputElement>(null);
@@ -8,9 +11,19 @@ export const RefFocus: React.FC = () => {
     //inputEl.current: <input type="text">
   };
   return (
-    <>
-      <input ref={inputEl} type="text" />
-      <button onClick={handleClick}>入力エリアをフォーカスする</button>
-    </>
+    <div className="flex">
+      <div className="p-8 w-1/2 leading-relaxed">
+        <p>初期値がnullの場合、useRefはDOMを参照させる役割をもちます。</p>
+      </div>
+      <div className="py-8 px-16 w-1/2 leading-relaxed">
+        <Box className="mb-4 w-48">
+          {/* TextFieldコンポーネントはinput要素を含んだdiv要素であり、inputに直接スタイルを反映することができないため、refではなくinputRefを用いる */}
+          <TextField label="入力フォーム" variant="outlined" inputRef={inputEl} />
+        </Box>
+        <Button variant="outlined" onClick={handleClick} className="block w-48">
+          フォーカスする
+        </Button>
+      </div>
+    </div>
   );
 };

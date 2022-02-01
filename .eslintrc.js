@@ -7,8 +7,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended', // TypeScriptでチェックされる項目をLintから除外する設定
     'prettier', // prettierのextendsは他のextendsより後に記述する
+    'plugin:tailwindcss/recommended', // TailwindCSS関連
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'tailwindcss'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -16,4 +17,4 @@ module.exports = {
   },
   root: true, // 上位ディレクトリにある他のeslintrcを参照しないようにする
   rules: {},
-}
+};

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export const Index: React.FC = () => {
   return (
     <>
-      <h1>Let's Study!</h1>
-      <p>
+      <h1 className="text-3xl">Let's Study!</h1>
+      <p className="text-3xl">
         <Link to="/memo">useMemoを学ぶ</Link>
       </p>
-      <p>
+      <p className="text-3xl">
         <Link to="/ref">useRefを学ぶ</Link>
       </p>
     </>

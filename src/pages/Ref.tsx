@@ -7,10 +7,12 @@ export const Ref: React.FC = () => {
   return (
     <>
       <h1 className="text-3xl">useRef</h1>
-      <div className="container max-w-screen-lg border border-red-500">
-        <h2>DOMを参照したい場合</h2>
+      <div className="container px-4 mx-auto max-w-screen-lg border border-red-500">
+        <h2 className="mb-4 text-2xl">DOMを参照したい場合</h2>
         <RefFocus />
-        <h2>値を裏で保持したい場合</h2>
+      </div>
+      <div className="container px-4 mx-auto max-w-screen-lg border border-red-500">
+        <h2 className="text-2xl">値を裏で保持したい場合</h2>
         <RefCompareState />
       </div>
       <p>

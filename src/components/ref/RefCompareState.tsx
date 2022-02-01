@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import Button from '@mui/material/Button';
 
 export const RefCompareState: React.FC = () => {
   const [stateCount, setStateCount] = useState<number>(0);
@@ -14,23 +15,33 @@ export const RefCompareState: React.FC = () => {
   };
 
   return (
-    <>
-      <p>
-        ReactのuseRefフックの初期値にnullではない……つまり文字列や数値といった何かしらの値の場合は、refオブジェクトのcurrentプロパティは、書き換え可能な状態になります。
-        また、useStateフックのように、stateやpropsの更新によってコンポーネントがマウントされても、currentプロパティの状態が保持されます。なお、currentプロパティの状態が更新されても、再レンダリングが起きません。
-        letで宣言したように再代入可能ながら、useStateフックのように状態を保持できて、でも再レンダリングの対象とならない……という変わった仕様が特徴です。
-      </p>
-      <p>
-        コンポーネントの再レンダリングはしたくないけど、内部に保持している値だけを更新したい場合は、保持したい値をuseStateではなく、useRefを利用するのが良さそうです。
-      </p>
-      <div>
-        <p>useStateの「stateCount」: {stateCount}</p>
-        <button onClick={incrementState}>カウントを増やす</button>
+    <div className="flex">
+      <div className="p-8 w-1/2 leading-relaxed">
+        <p className="mb-2">
+          初期値がnullではなく文字列や数値の場合、refオブジェクトのcurrentプロパティは書き換え可能になります。
+        </p>
+        <p className="mb-2">
+          useRefのカウントを増やしても数値は変わりませんが、useStateのカウントを増やすと、再レンダリングにより値が更新されます。
+        </p>
+        <p>このことから、currentプロパティの状態が更新されても、再レンダリングが起きないことがわかります。</p>
+        <p className="mb-2">
+          再レンダリングをせずに内部に保持している値だけを更新したい場合は、useStateではなくuseRefを利用するようにしましょう。
+        </p>
       </div>
-      <div>
-        <p>useRefの「refCount」: {refCount.current}</p>
-        <button onClick={incrementRef}>カウントを増やす</button>
+      <div className="flex flex-col items-center p-8 w-1/2">
+        <div className="container p-8">
+          <p className="mb-2">useStateの「stateCount」: {stateCount}</p>
+          <Button variant="outlined" onClick={incrementState}>
+            カウントを増やす
+          </Button>
+        </div>
+        <div className="container p-8">
+          <p className="mb-2">useRefの「refCount」: {refCount.current}</p>
+          <Button variant="outlined" onClick={incrementRef}>
+            カウントを増やす
+          </Button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };

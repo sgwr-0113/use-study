@@ -1,0 +1,58 @@
+.container {
+  display: inline-block;
+	position: relative;
+	color: #fff;
+	z-index: 1;
+}
+
+.container::before {
+  content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: -1;
+background: #01579B;
+transform: scaleY(1.1) perspective(.6em) rotateX(0.2deg);
+transform-origin: bottom left;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-1500px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation-name: slideInLeft;  // アニメーションの名前
+  animation-duration: 0.9s;  // 所要時間
+  animation-timing-function: ease-out;  // 周期の中でどのように進行するか ease-outは「速く始まり、速度を落としながら終わる」
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation-name: fadeUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;  // 最後の状態を維持する
+  animation-delay: 1s;
+  opacity:0;
+  }
+  

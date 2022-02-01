@@ -10,9 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
 
 const pages = [
-  { name: 'useMemo', path: '/memo' },
-  { name: 'useRef', path: '/ref' },
-  { name: 'useHoge', path: '/hoge' },
+  { title: 'useMemo', path: '/memo' },
+  { title: 'useRef', path: '/ref' },
+  { title: 'useHoge', path: '/hoge' },
 ];
 
 export const Header: React.FC = () => {
@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
     setAnchorElNav(null);
   };
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="fixed" color="default">
       <Toolbar>
         <IconButton
           size="large"
@@ -54,10 +54,10 @@ export const Header: React.FC = () => {
           onClose={handleCloseNavMenu}
         >
           {pages.map((page) => (
-            <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+            <MenuItem key={page.title} onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 <Link href={page.path} color="inherit" underline="none">
-                  {page.name}
+                  {page.title}
                 </Link>
               </Typography>
             </MenuItem>

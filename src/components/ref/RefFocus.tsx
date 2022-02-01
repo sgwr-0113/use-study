@@ -11,11 +11,11 @@ export const RefFocus: React.FC = () => {
     //inputEl.current: <input type="text">
   };
   return (
-    <div className="flex">
-      <div className="p-8 w-1/2 leading-relaxed">
+    <div className="md:flex">
+      <div className="p-8 leading-relaxed md:w-1/2">
         <p>初期値がnullの場合、useRefはDOMを参照させる役割をもちます。</p>
       </div>
-      <div className="py-8 px-16 w-1/2 leading-relaxed">
+      <div className="flex flex-col items-center py-4 px-16 leading-relaxed md:py-8 md:w-1/2">
         <Box className="mb-4 w-48">
           {/* TextFieldコンポーネントはinput要素を含んだdiv要素であり、inputに直接スタイルを反映することができないため、refではなくinputRefを用いる */}
           <TextField label="入力フォーム" variant="outlined" inputRef={inputEl} />

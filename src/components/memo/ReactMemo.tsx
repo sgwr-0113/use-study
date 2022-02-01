@@ -83,7 +83,6 @@ const Field: React.FC<FieldProps> = (props) => {
 export const ReactMemo: React.FC = () => {
   return (
     <>
-      <h2>React.memo</h2>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <MyPaper>
           <h3>React.memo使用時</h3>

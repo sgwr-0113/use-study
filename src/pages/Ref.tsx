@@ -7,7 +7,7 @@ import { SubHeader } from 'components/shared/SubHeader';
 export const Ref: React.FC = () => {
   return (
     <>
-      <SubHeader />
+      <SubHeader title="useRef" text="要素を参照する" />
       <section className="py-12">
         <div className="mx-auto max-w-screen-lg">
           <h2 className="px-8 text-3xl">DOMを参照する</h2>

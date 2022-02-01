@@ -15,8 +15,8 @@ export const RefCompareState: React.FC = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="p-8 w-1/2 leading-relaxed">
+    <div className="md:flex">
+      <div className="p-8 leading-relaxed md:w-1/2">
         <p className="mb-2">
           初期値がnullではなく文字列や数値の場合、refオブジェクトのcurrentプロパティは書き換え可能になります。
         </p>
@@ -28,14 +28,14 @@ export const RefCompareState: React.FC = () => {
           再レンダリングをせずに内部に保持している値だけを更新したい場合は、useStateではなくuseRefを利用するようにしましょう。
         </p>
       </div>
-      <div className="flex flex-col items-center p-8 w-1/2">
-        <div className="container p-8">
+      <div className="flex flex-col items-center text-center md:p-8 md:w-1/2">
+        <div className="container p-4 md:p-8">
           <p className="mb-2">useStateの「stateCount」: {stateCount}</p>
           <Button variant="outlined" onClick={incrementState}>
             カウントを増やす
           </Button>
         </div>
-        <div className="container p-8">
+        <div className="container p-4 md:p-8">
           <p className="mb-2">useRefの「refCount」: {refCount.current}</p>
           <Button variant="outlined" onClick={incrementRef}>
             カウントを増やす

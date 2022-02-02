@@ -5,7 +5,7 @@ export const Index: React.FC = () => {
   return (
     <>
       <div className="w-screen h-screen bg-center bg-no-repeat bg-cover bg-top-wrapper">
-        <div className="py-64 px-40 w-full h-full bg-indigo-300/[0.3]">
+        <div className="py-64 px-40 w-full h-full bg-indigo-400/[0.2]">
           <div>
             <h1 className="font-serif text-6xl text-white">React hooksを基礎から理解しよう</h1>
           </div>

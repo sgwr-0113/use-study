@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
             <MenuItem key={page.title} onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 <Link href={page.path} color="inherit" underline="none">
-                  {page.title}
+                  <span className="font-serif">{page.title}</span>
                 </Link>
               </Typography>
             </MenuItem>
@@ -65,10 +65,12 @@ export const Header: React.FC = () => {
         </Menu>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: { xs: 'center', md: 'unset' } }}>
           <Link href="/" color="inherit" underline="none">
-            useStudy
+            <span className="font-serif">useStudy</span>
           </Link>
         </Typography>
-        <Button color="inherit">Login</Button>
+        <Button color="inherit">
+          <span className="font-serif">Login</span>
+        </Button>
       </Toolbar>
     </AppBar>
   );

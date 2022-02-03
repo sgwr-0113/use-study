@@ -8,12 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
-
-const pages = [
-  { title: 'useMemo', path: '/memo' },
-  { title: 'useRef', path: '/ref' },
-  { title: 'useHoge', path: '/hoge' },
-];
+import { Pages } from 'data/pages';
 
 export const Header: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -53,7 +48,7 @@ export const Header: React.FC = () => {
           open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
         >
-          {pages.map((page) => (
+          {Pages.map((page) => (
             <MenuItem key={page.title} onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 <Link href={page.path} color="inherit" underline="none">

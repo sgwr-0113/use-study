@@ -83,17 +83,25 @@ const Field: React.FC<FieldProps> = (props) => {
 export const ReactMemo: React.FC = () => {
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <MyPaper>
-          <h3>React.memo使用時</h3>
-          <Field isUseMemo={true} />
-        </MyPaper>
-        <MyPaper>
-          <h3>React.memoを使わなかった場合</h3>
-          <Field isUseMemo={false} />
-        </MyPaper>
+      <div className="md:flex">
+        <div className="p-8 leading-relaxed md:w-1/2">
+          <p className="mb-2">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
+          <h3 className="py-4 text-xl">React.memo化した方がいい例</h3>
+          <ul className="list-disc list-inside">
+            <li>タイマーの側にあるボタン</li>
+          </ul>
+        </div>
+        <div className="flex flex-col items-center text-center md:p-8 md:w-1/2">
+          <div className="container p-4 md:p-8">
+            <h3 className="mb-2 text-xl">React.memo使用</h3>
+            <Field isUseMemo={true} />
+          </div>
+          <div className="container p-4 md:p-8">
+            <h3 className="mb-2 text-xl">React.memo非使用</h3>
+            <Field isUseMemo={false} />
+          </div>
+        </div>
       </div>
-      <p>頻繁に更新されるものの側にあるものはReact.memoでメモ化した方がいい（タイマーの側にあるボタンなど）</p>
     </>
   );
 };

@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <div className="mt-16">
+      <div className="pt-16 w-screen">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/memo" element={<Memo />} />

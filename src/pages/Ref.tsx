@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { RefFocus } from 'components/ref/RefFocus';
 import { RefCompareState } from 'components/ref/RefCompareState';
 import { SubHeader } from 'components/shared/SubHeader';
@@ -21,9 +20,6 @@ export const Ref: React.FC = () => {
           <RefCompareState />
         </div>
       </section>
-      <p>
-        <Link to="/">トップへ戻る</Link>
-      </p>
     </>
   );
 };

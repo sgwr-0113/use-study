@@ -4,6 +4,7 @@ import { Index } from 'pages/Index';
 import { Memo } from 'pages/Memo';
 import { Ref } from 'pages/Ref';
 import { Header } from 'components/shared/Header';
+import { Footer } from 'components/shared/Footer';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
           <Route path="/ref" element={<Ref />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 };

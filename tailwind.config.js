@@ -8,6 +8,9 @@ module.exports = {
       backgroundImage: {
         'top-wrapper': "url('/src/images/top.jpg')",
       },
+      colors: {
+        'primary-blue': '#01579B',
+      },
     },
   },
   plugins: [],

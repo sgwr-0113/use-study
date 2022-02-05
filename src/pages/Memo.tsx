@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ReactMemo } from 'components/memo/ReactMemo';
 import { SubHeader } from 'components/shared/SubHeader';
 import { SquareMemo } from 'components/memo/SquareMemo';
@@ -21,9 +20,6 @@ export const Memo: React.FC = () => {
           <SquareMemo />
         </div>
       </section>
-      <p>
-        <Link to="/">トップへ戻る</Link>
-      </p>
     </>
   );
 };

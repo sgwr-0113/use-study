@@ -6,6 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      light: 'rgb(219 234 254)',
+      main: '#01579B',
+    },
+  },
   breakpoints: {
     values: {
       xs: 0,

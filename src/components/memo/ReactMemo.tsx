@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
 interface CountProps {
@@ -11,16 +9,6 @@ interface CountProps {
 interface FieldProps {
   isUseMemo: boolean;
 }
-
-const MyPaper = styled(Paper)({
-  width: 360,
-  height: 360,
-  padding: 24,
-  boxSizing: 'border-box',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'column',
-});
 
 // 親コンポーネントFieldのcountStateが更新された時のみレンダリングされる（メモ化）
 const MemoCount: React.FC<CountProps> = React.memo(({ text, countState }) => {

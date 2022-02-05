@@ -14,6 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export const Index: React.FC = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="w-screen h-auto bg-center bg-no-repeat bg-cover bg-top-wrapper md:h-screen">

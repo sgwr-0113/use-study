@@ -5,6 +5,7 @@ import { RefCompareState } from 'components/ref/RefCompareState';
 import { SubHeader } from 'components/shared/SubHeader';
 
 export const Ref: React.FC = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <SubHeader title="useRef" text="要素を参照する" />

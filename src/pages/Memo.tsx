@@ -5,6 +5,7 @@ import { SubHeader } from 'components/shared/SubHeader';
 import { SquareMemo } from 'components/memo/SquareMemo';
 
 export const Memo: React.FC = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <SubHeader title="useMemo" text="結果を再利用する" />

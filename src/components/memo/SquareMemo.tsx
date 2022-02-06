@@ -1,14 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import Button from '@mui/material/Button';
-
-const square = (parameter: number) => {
-  console.log('square関数の実行観察');
-  //正方形の面積を求める関数を定義する
-  //パフォーマンスを観察したいので、わざと重い処理を置いてみる
-  let i = 0;
-  while (i < 20000000) i++;
-  return parameter * parameter;
-};
+import { heavyFunc } from 'utils/heavyFunc';
 
 export const SquareMemo = () => {
   const [countA, setCountA] = useState(0);
@@ -27,24 +19,42 @@ export const SquareMemo = () => {
   //正方形の面積をcountBを使った計算結果
   //useMemoを使って、計算結果をメモ化している
   //第２引数である依存配列にcountBを渡しているので、countAを更新しても、countBが更新されなければメモ化された描画結果を再利用するためsquare関数は更新されない
-  const squareArea = useMemo(() => square(countB), [countB]);
+  const memorizedResult = useMemo(() => heavyFunc(countB), [countB]);
 
   return (
     <>
-      <p>
-        再描画{countA}回目
-        <Button variant="outlined" onClick={resultA}>
-          描画する
-        </Button>
-      </p>
-      <p>【正方形の面積】</p>
-      <p>
-        計算結果{countB}{' '}
-        <Button variant="outlined" onClick={resultB}>
-          B + 1
-        </Button>
-      </p>
-      <p>計算結果B ✕ 計算結果B = {squareArea}</p>
+      <div className="md:flex">
+        <div className="p-8 leading-relaxed md:w-1/2">
+          <p className="mb-2">
+            初期値がnullではなく文字列や数値の場合、refオブジェクトのcurrentプロパティは書き換え可能になります。
+          </p>
+          <p className="mb-2">
+            useRefのカウントを増やしても数値は変わりませんが、useStateのカウントを増やすと、再レンダリングにより値が更新されます。
+          </p>
+          <p>このことから、currentプロパティの状態が更新されても、再レンダリングが起きないことがわかります。</p>
+          <p className="mb-2">
+            再レンダリングをせずに内部に保持している値だけを更新したい場合は、useStateではなくuseRefを利用するようにしましょう。
+          </p>
+        </div>
+        <div className="flex flex-col items-center text-center md:p-8 md:w-1/2">
+          <div className="container flex justify-around">
+            <div>
+              <p className="mb-2"> 再描画{countA}回目</p>
+              <Button variant="outlined" onClick={resultA}>
+                描画する
+              </Button>
+            </div>
+            <div>
+              <p className="mb-2">重い計算結果"{memorizedResult}"</p>
+              <p>
+                <Button variant="contained" onClick={resultB}>
+                  重い計算
+                </Button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

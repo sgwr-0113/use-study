@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import { Pages } from 'data/pages';
+import { Pages } from 'utils/pages';
 
 const CustomButton = styled(Button)(({ theme }) => ({
   color: theme.palette.text.secondary,

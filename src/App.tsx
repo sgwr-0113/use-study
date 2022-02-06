@@ -8,7 +8,7 @@ import { Footer } from 'components/shared/Footer';
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <div className="pt-16 w-screen">
         <Routes>

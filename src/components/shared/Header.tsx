@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,7 +8,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Link from '@mui/material/Link';
 import { Pages } from 'data/pages';
 
 export const Header: React.FC = () => {
@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
           {Pages.map((page) => (
             <MenuItem key={page.title} onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
-                <Link href={page.path} color="inherit" underline="none">
+                <Link to={page.path}>
                   <span className="font-serif">{page.title}</span>
                 </Link>
               </Typography>
@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
           ))}
         </Menu>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: { xs: 'center', md: 'unset' } }}>
-          <Link href="/" color="inherit" underline="none">
+          <Link to="/">
             <span className="font-serif">useStudy</span>
           </Link>
         </Typography>

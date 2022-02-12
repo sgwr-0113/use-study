@@ -9,14 +9,14 @@ export const Ref: React.FC = () => {
     <>
       <SubHeader title="useRef" text="要素を参照する" />
       <section className="py-12">
-        <div className="mx-auto max-w-screen-lg">
-          <h2 className="px-8 text-3xl">DOMを参照する</h2>
+        <div className="section-container">
+          <h2 className="section-heading">DOMを参照する</h2>
           <RefFocus />
         </div>
       </section>
       <section className="py-12 bg-blue-100">
-        <div className="mx-auto max-w-screen-lg">
-          <h2 className="px-8 text-3xl">値を裏で保持する</h2>
+        <div className="section-container">
+          <h2 className="section-heading">値を裏で保持する</h2>
           <RefCompareState />
         </div>
       </section>

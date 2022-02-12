@@ -15,28 +15,38 @@ export const RefCompareState: React.FC = () => {
   };
 
   return (
-    <div className="md:flex">
-      <div className="p-8 leading-relaxed md:w-1/2">
-        <p className="mb-2">
-          初期値がnullではなく文字列や数値の場合、refオブジェクトのcurrentプロパティは書き換え可能になります。
+    <div className="description">
+      <div className="description-left">
+        <p className="description-left-p">
+          必要な時だけ経過を表示したい時は、初期値を与えた上でcurrentプロパティを参照しましょう
         </p>
-        <p className="mb-2">
-          useRefのカウントを増やしても数値は変わりませんが、useStateのカウントを増やすと、再レンダリングにより値が更新されます。
+        <p className="description-left-p">
+          初期値が文字列や数値の場合、refオブジェクトのcurrentプロパティは書き換え可能になります
         </p>
-        <p>このことから、currentプロパティの状態が更新されても、再レンダリングが起きないことがわかります。</p>
-        <p className="mb-2">
-          再レンダリングをせずに内部に保持している値だけを更新したい場合は、useStateではなくuseRefを利用するようにしましょう。
+        <p className="description-left-p">
+          useRefのカウントを増やしても数値は変わりませんが、stateが更新されると再レンダリングにより値が更新されます
         </p>
+        <p className="description-left-p">
+          このことから、currentプロパティの状態が更新されても、再レンダリングが起きないことがわかります
+        </p>
+        <p className="description-left-p">
+          再レンダリングをせずに内部に保持している値だけを更新したい場合は、useStateではなくuseRefを利用するようにしましょう
+        </p>
+        <h3 className="description-left-h3">使いどころ</h3>
+        <ul className="description-left-ul">
+          <li>必要な時に経過時間を表示</li>
+          <li>最後に累積正解数や戦績を表示</li>
+        </ul>
       </div>
-      <div className="flex flex-col items-center text-center md:p-8 md:w-1/2">
-        <div className="container p-4 md:p-8">
-          <p className="mb-2">useStateの「stateCount」: {stateCount}</p>
+      <div className="description-right">
+        <div className="description-right-container">
+          <p className="description-left-p">useStateでカウント: {stateCount}</p>
           <Button variant="outlined" onClick={incrementState}>
             カウントを増やす
           </Button>
         </div>
-        <div className="container p-4 md:p-8">
-          <p className="mb-2">useRefの「refCount」: {refCount.current}</p>
+        <div className="description-right-container">
+          <p className="description-left-p">useRefでカウント: {refCount.current}</p>
           <Button variant="outlined" onClick={incrementRef}>
             カウントを増やす
           </Button>

@@ -30,48 +30,35 @@ const Count: React.FC<CountProps> = ({ text, countState }) => {
 };
 
 const Field: React.FC<FieldProps> = (props) => {
-  const [countStateA, setCountStateA] = useState<number>(0);
-  const [countStateB, setCountStateB] = useState<number>(0);
+  const { isUseMemo } = props;
+  const [countA, setCountA] = useState<number>(0);
+  const [countB, setCountB] = useState<number>(0);
 
-  const incrementACounter = () => setCountStateA(countStateA + 1);
-  const incrementBCounter = () => setCountStateB(countStateB + 1);
   return (
     <>
-      {props.isUseMemo === true ? (
+      {isUseMemo ? (
         <>
-          <MemoCount text="A ボタン" countState={countStateA} />
-          <p className="text-sm text-red-500">レンダリングも{countStateA}回目</p>
-
-          <MemoCount text="B ボタン" countState={countStateB} />
-          <p className="text-sm text-red-500">レンダリングも{countStateB}回目</p>
-
-          <div className="p-4">
-            <Button variant="outlined" onClick={incrementACounter}>
-              A ボタン
-            </Button>
-            <Button variant="contained" onClick={incrementBCounter} sx={{ marginLeft: '8px' }}>
-              B ボタン
-            </Button>
-          </div>
+          <MemoCount text="A ボタン" countState={countA} /> <p className="attention-red">レンダリングも{countA}回目</p>
+          <MemoCount text="B ボタン" countState={countB} />
+          <p className="attention-red">レンダリングも{countB}回目</p>
         </>
       ) : (
         <>
-          <Count text="A ボタン" countState={countStateA} />
-          <p className="text-sm text-red-500">レンダリングは{countStateA + countStateB}回目</p>
+          <Count text="A ボタン" countState={countA} />
+          <p className="attention-red">レンダリングは{countA + countB}回目</p>
 
-          <Count text="B ボタン" countState={countStateB} />
-          <p className="text-sm text-red-500">レンダリングは{countStateA + countStateB}回目</p>
-
-          <div className="p-4">
-            <Button variant="outlined" onClick={incrementACounter}>
-              A ボタン
-            </Button>
-            <Button variant="contained" onClick={incrementBCounter} sx={{ marginLeft: '8px' }}>
-              B ボタン
-            </Button>
-          </div>
+          <Count text="B ボタン" countState={countB} />
+          <p className="attention-red">レンダリングは{countA + countB}回目</p>
         </>
       )}
+      <div className="p-4">
+        <Button variant="outlined" onClick={() => setCountA(countA + 1)}>
+          A ボタン
+        </Button>
+        <Button variant="contained" onClick={() => setCountB(countB + 1)} sx={{ marginLeft: '8px' }}>
+          B ボタン
+        </Button>
+      </div>
     </>
   );
 };
@@ -79,29 +66,29 @@ const Field: React.FC<FieldProps> = (props) => {
 export const ReactMemo: React.FC = () => {
   return (
     <>
-      <div className="md:flex">
-        <div className="p-8 leading-relaxed md:w-1/2">
-          <p className="mb-2">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
-          <p className="mb-2">
+      <div className="description">
+        <div className="description-left">
+          <p className="description-left-p">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
+          <p className="description-left-p">
             <span className="hidden md:inline">右</span>
             <span className="inline md:hidden">下</span>の例ではカウントの表記がReact.memo化されています
           </p>
-          <p className="mb-2">
+          <p className="description-left-p">
             React.memoが使用された方では、Aボタンクリック時にBボタンのカウント表記はレンダリングされません
           </p>
-          <h3 className="py-4 text-xl">React.memoの使いどころ</h3>
-          <ul className="list-disc list-inside">
+          <h3 className="description-left-h3">使いどころ</h3>
+          <ul className="description-left-ul">
             <li>タイマー</li>
             <li>インクリメンタルサーチ</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center text-center md:w-1/2">
-          <div className="container p-4 md:p-8">
-            <h3 className="mb-2">React.memo使用表記</h3>
+        <div className="description-right">
+          <div className="description-right-container">
+            <h3 className="description-right-container-h3">React.memo使用</h3>
             <Field isUseMemo={true} />
           </div>
-          <div className="container p-4 md:p-8">
-            <h3 className="mb-2">React.memo非使用表記</h3>
+          <div className="description-right-container">
+            <h3 className="description-right-container-h3">React.memo非使用</h3>
             <Field isUseMemo={false} />
           </div>
         </div>

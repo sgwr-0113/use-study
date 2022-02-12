@@ -13,3 +13,37 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section-container {
+  @apply mx-auto max-w-screen-lg;
+}
+.section-heading {
+  @apply px-8 text-3xl;
+}
+.description {
+  @apply md:flex;
+}
+.description-left {
+  @apply p-8 leading-relaxed md:w-1/2;
+}
+.description-left-p {
+  @apply mb-2;
+}
+.description-left-h3 {
+  @apply py-4 text-xl;
+}
+.description-left-ul {
+  @apply list-disc list-inside;
+}
+.description-right {
+  @apply flex flex-col items-center text-center md:w-1/2;
+}
+.description-right-container {
+  @apply container p-4 md:p-8;
+}
+.description-right-container-h3 {
+  @apply mb-2;
+}
+.attentino-red {
+  @apply text-sm text-red-500;
+}

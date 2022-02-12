@@ -9,14 +9,14 @@ export const Memo: React.FC = () => {
     <>
       <SubHeader title="useMemo" text="結果を再利用する" />
       <section className="py-12">
-        <div className="mx-auto max-w-screen-lg">
-          <h2 className="px-8 text-3xl">コンポーネントを再利用する React.memo</h2>
+        <div className="section-container">
+          <h2 className="section-heading">コンポーネントを再利用する React.memo</h2>
           <ReactMemo />
         </div>
       </section>
       <section className="py-12 bg-blue-100">
-        <div className="mx-auto max-w-screen-lg">
-          <h2 className="px-8 text-3xl">結果を再利用する useMemo</h2>
+        <div className="section-container">
+          <h2 className="section-heading">結果を再利用する useMemo</h2>
           <SquareMemo />
         </div>
       </section>

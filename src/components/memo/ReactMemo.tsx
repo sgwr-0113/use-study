@@ -74,7 +74,13 @@ export const ReactMemo: React.FC = () => {
       <div className="md:flex">
         <div className="p-8 leading-relaxed md:w-1/2">
           <p className="mb-2">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
-          <p className="mb-2">React.memoが使用された方では、Aボタンクリック時にBボタンはレンダリングされません</p>
+          <p className="mb-2">
+            <span className="hidden md:inline">右</span>
+            <span className="inline md:hidden">下</span>の例ではカウントの表記がReact.memo化されています
+          </p>
+          <p className="mb-2">
+            React.memoが使用された方では、Aボタンクリック時にBボタンのカウント表記はレンダリングされません
+          </p>
           <h3 className="py-4 text-xl">React.memoの使いどころ</h3>
           <ul className="list-disc list-inside">
             <li>タイマー</li>

@@ -34,7 +34,7 @@ const Field: React.FC<FieldProps> = (props) => {
   );
 };
 
-export const SquareMemo = () => {
+export const MemoResult: React.FC = () => {
   return (
     <>
       <div className="description">

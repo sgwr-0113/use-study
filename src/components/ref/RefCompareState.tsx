@@ -6,7 +6,7 @@ export const RefCompareState: React.FC = () => {
   const refCount = useRef<number>(0);
 
   const incrementState = () => {
-    setStateCount((prevCount) => prevCount + 1);
+    setStateCount(stateCount + 1);
   };
 
   const incrementRef = () => {

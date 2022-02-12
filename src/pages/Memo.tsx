@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactMemo } from 'components/memo/ReactMemo';
 import { SubHeader } from 'components/shared/SubHeader';
-import { SquareMemo } from 'components/memo/SquareMemo';
+import { MemoComponent } from 'components/memo/MemoComponent';
+import { MemoResult } from 'components/memo/MemoResult';
 
 export const Memo: React.FC = () => {
   window.scrollTo(0, 0);
@@ -11,13 +11,13 @@ export const Memo: React.FC = () => {
       <section className="py-12">
         <div className="section-container">
           <h2 className="section-heading">コンポーネントを再利用する（React.memo）</h2>
-          <ReactMemo />
+          <MemoComponent />
         </div>
       </section>
       <section className="py-12 bg-blue-100">
         <div className="section-container">
           <h2 className="section-heading">結果を再利用する</h2>
-          <SquareMemo />
+          <MemoResult />
         </div>
       </section>
     </>

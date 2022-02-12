@@ -63,7 +63,7 @@ const Field: React.FC<FieldProps> = (props) => {
   );
 };
 
-export const ReactMemo: React.FC = () => {
+export const MemoComponent: React.FC = () => {
   return (
     <>
       <div className="description">

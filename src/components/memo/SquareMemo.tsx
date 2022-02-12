@@ -40,7 +40,7 @@ export const SquareMemo = () => {
       <div className="description">
         <div className="description-left">
           <p className="description-left-p">
-            そんなにしょっちゅう結果が変わらない関数の戻り値はuseMemoでメモ化し、値を再利用しましょう
+            頻繁に結果が変わらない関数の戻り値はuseMemoでメモ化し、値を再利用しましょう
           </p>
           <p>useCallbackは関数自体をメモ化しますが、こちらは関数の結果をメモ化します</p>
           <p className="description-left-p">

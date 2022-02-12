@@ -38,7 +38,8 @@ const Field: React.FC<FieldProps> = (props) => {
     <>
       {isUseMemo ? (
         <>
-          <MemoCount text="A ボタン" countState={countA} /> <p className="attention-red">レンダリングも{countA}回目</p>
+          <MemoCount text="A ボタン" countState={countA} />
+          <p className="attention-red">レンダリングも{countA}回目</p>
           <MemoCount text="B ボタン" countState={countB} />
           <p className="attention-red">レンダリングも{countB}回目</p>
         </>
@@ -46,7 +47,6 @@ const Field: React.FC<FieldProps> = (props) => {
         <>
           <Count text="A ボタン" countState={countA} />
           <p className="attention-red">レンダリングは{countA + countB}回目</p>
-
           <Count text="B ボタン" countState={countB} />
           <p className="attention-red">レンダリングは{countA + countB}回目</p>
         </>

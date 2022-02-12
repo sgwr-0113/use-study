@@ -18,7 +18,7 @@ code {
   @apply mx-auto max-w-screen-lg;
 }
 .section-heading {
-  @apply px-8 text-3xl;
+  @apply px-8 text-2xl md:text-3xl;
 }
 .description {
   @apply md:flex;
@@ -44,6 +44,6 @@ code {
 .description-right-container-h3 {
   @apply mb-2;
 }
-.attentino-red {
+.attention-red {
   @apply text-sm text-red-500;
 }

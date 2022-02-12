@@ -14,7 +14,7 @@ interface FieldProps {
 const MemoCount: React.FC<CountProps> = React.memo(({ text, countState }) => {
   console.log('Count child component:', text);
   return (
-    <p className="text-xl">
+    <p className="py-1 text-xl">
       {text}: {countState}
     </p>
   );
@@ -23,7 +23,7 @@ const MemoCount: React.FC<CountProps> = React.memo(({ text, countState }) => {
 const Count: React.FC<CountProps> = ({ text, countState }) => {
   console.log('Count child component:', text);
   return (
-    <p className="text-xl">
+    <p className="py-1 text-xl">
       {text}: {countState}
     </p>
   );
@@ -40,7 +40,11 @@ const Field: React.FC<FieldProps> = (props) => {
       {props.isUseMemo === true ? (
         <>
           <MemoCount text="A ボタン" countState={countStateA} />
+          <p className="text-sm text-red-500">レンダリングも{countStateA}回目</p>
+
           <MemoCount text="B ボタン" countState={countStateB} />
+          <p className="text-sm text-red-500">レンダリングも{countStateB}回目</p>
+
           <div className="p-4">
             <Button variant="outlined" onClick={incrementACounter}>
               A ボタン
@@ -53,7 +57,11 @@ const Field: React.FC<FieldProps> = (props) => {
       ) : (
         <>
           <Count text="A ボタン" countState={countStateA} />
+          <p className="text-sm text-red-500">レンダリングは{countStateA + countStateB}回目</p>
+
           <Count text="B ボタン" countState={countStateB} />
+          <p className="text-sm text-red-500">レンダリングは{countStateA + countStateB}回目</p>
+
           <div className="p-4">
             <Button variant="outlined" onClick={incrementACounter}>
               A ボタン

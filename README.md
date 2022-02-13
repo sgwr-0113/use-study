@@ -1,4 +1,4 @@
-#use-study
+# use-study
 
 ## 作成背景、目的
 React hooksに関する知識のアウトプット
@@ -31,6 +31,7 @@ index.cssのapplyの内容を編集することで、レイアウトの編集が
 ## 補足
 - アニメーションにはsassを適用しています
 - 挙動をわかりやすくするために、一部あえて`console.log`を残しています
+- 学習に応じて随時ページを追加していく予定です
 
 ## ホスト先URL
 https://sgwr-0113.github.io/use-study/

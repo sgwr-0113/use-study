@@ -45,7 +45,7 @@ export const RefCompareState: React.FC = () => {
             カウントを増やす
           </Button>
         </div>
-        <div className="description-right-container">
+        <div className="mt-8 sm:mt-16 description-right-container">
           <p className="description-left-p">useRefでカウント: {refCount.current}</p>
           <Button variant="outlined" onClick={incrementRef}>
             カウントを増やす

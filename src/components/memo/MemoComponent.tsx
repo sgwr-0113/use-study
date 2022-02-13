@@ -87,7 +87,7 @@ export const MemoComponent: React.FC = () => {
             <h3 className="description-right-container-h3">React.memo使用</h3>
             <Field isUseMemo={true} />
           </div>
-          <div className="description-right-container">
+          <div className="mt-8 sm:mt-16 description-right-container">
             <h3 className="description-right-container-h3">React.memo非使用</h3>
             <Field isUseMemo={false} />
           </div>

@@ -16,7 +16,7 @@ const Field: React.FC<FieldProps> = (props) => {
 
   return (
     <>
-      <div className="description-right-container">
+      <div className={isUseMemo ? 'description-right-container' : 'mt-8 sm:mt-16 description-right-container'}>
         <h3 className="description-right-container-h3">useMemo{!isUseMemo && '非'}使用</h3>
         <p className="py-1 text-xl"> 再描画: {countA}回目</p>
         <p className="py-1 text-xl">計算結果: {isUseMemo ? memorizedResult : result}</p>
@@ -42,9 +42,9 @@ export const MemoResult: React.FC = () => {
           <p className="description-left-p">
             頻繁に結果が変わらない関数の戻り値はuseMemoでメモ化し、値を再利用しましょう
           </p>
-          <p>useCallbackは関数自体をメモ化しますが、こちらは関数の結果をメモ化します</p>
+          <p>useCallbackは関数自体をメモ化しますが、useMemoは関数の結果をメモ化します</p>
           <p className="description-left-p">
-            ただ、厳密に突き詰めるとキリがない上、開発効率が落ちるため、ルールを設けるといいでしょう
+            ただ、厳密に突き詰めるとキリがなく開発効率が落ちるため、自分の中でルールを設けた方が良さそうです
           </p>
           <h3 className="description-left-h3">使いどころ</h3>
           <ul className="description-left-ul">

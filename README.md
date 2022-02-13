@@ -9,7 +9,7 @@ React hooksに関する知識のアウトプット
 - Tailwind CSS
 - sass
 - MUI
-- ES Lint
+- ESLint
 - Prettier
 - husky
 - GitHub Pages
@@ -20,6 +20,11 @@ React hooksに関する知識のアウトプット
 スマートフォン・タブレット・PC3種類の画面表示に対応。
 
 ブレイクポイント：640, 1024
+
+### コード検証の自動化
+
+毎コミット時にlintを実行するよう、huskyでコード検証を自動化しました。
+Prettierは保存時に実行されるように設定しています。
 
 ### 開発効率向上
 アウトプットの効率を上げるために、Tailwind CSSやMUIを用いてデザインにかかる労力を削減しました。

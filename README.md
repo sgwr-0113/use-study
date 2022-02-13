@@ -1,7 +1,7 @@
 # use-study
 
-## 作成背景、目的
-React hooksに関する知識のアウトプット
+## 作成背景・目的
+React hooksに関する知識のアウトプット用
 
 ## 使用技術
 - React

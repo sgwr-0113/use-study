@@ -18,13 +18,13 @@ code {
   @apply mx-auto max-w-screen-lg;
 }
 .section-heading {
-  @apply px-8 text-2xl md:text-3xl;
+  @apply px-8 text-2xl sm:text-3xl;
 }
 .description {
-  @apply md:flex;
+  @apply sm:flex;
 }
 .description-left {
-  @apply p-8 leading-relaxed md:w-1/2;
+  @apply p-8 leading-relaxed sm:w-1/2;
 }
 .description-left-p {
   @apply mb-2;
@@ -36,10 +36,10 @@ code {
   @apply list-disc list-inside;
 }
 .description-right {
-  @apply flex flex-col items-center text-center md:w-1/2;
+  @apply flex flex-col items-center text-center sm:w-1/2;
 }
 .description-right-container {
-  @apply container p-4 md:p-8;
+  @apply container p-4 sm:p-8;
 }
 .description-right-container-h3 {
   @apply mb-2;

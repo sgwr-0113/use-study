@@ -58,7 +58,7 @@ export const Header: React.FC = () => {
             </MenuItem>
           ))}
         </Menu>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: { xs: 'center', md: 'unset' } }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: { xs: 'center', sm: 'unset' } }}>
           <Link to="/">
             <span className="font-serif">useStudy</span>
           </Link>

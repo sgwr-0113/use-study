@@ -70,8 +70,8 @@ export const MemoComponent: React.FC = () => {
         <div className="description-left">
           <p className="description-left-p">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
           <p className="description-left-p">
-            <span className="hidden md:inline">右</span>
-            <span className="inline md:hidden">下</span>の例ではカウントの表記がReact.memo化されています
+            <span className="hidden sm:inline">右</span>
+            <span className="inline sm:hidden">下</span>の例ではカウントの表記がReact.memo化されています
           </p>
           <p className="description-left-p">
             React.memoが使用された方では、Aボタンクリック時にBボタンのカウント表記はレンダリングされません

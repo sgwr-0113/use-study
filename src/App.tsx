@@ -5,6 +5,7 @@ import { Memo } from 'pages/Memo';
 import { Ref } from 'pages/Ref';
 import { Header } from 'components/shared/Header';
 import { Footer } from 'components/shared/Footer';
+import { Callback } from 'pages/Callback';
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/memo" element={<Memo />} />
           <Route path="/ref" element={<Ref />} />
+          <Route path="/callback" element={<Callback />} />
         </Routes>
       </div>
       <Footer />

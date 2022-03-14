@@ -17,9 +17,8 @@ interface FieldProps {
 
 const Count: React.FC<CountProps> = (props) => {
   const { text, countState } = props;
-  console.log('Count child component', text);
   return (
-    <p>
+    <p className="py-1 text-xl">
       {text}:{countState}
     </p>
   );
@@ -27,10 +26,15 @@ const Count: React.FC<CountProps> = (props) => {
 
 const MemoButton: React.FC<MemoButtonProps> = React.memo((props) => {
   const { value, handleClick } = props;
+
   return (
-    <>
-      <Button onClick={handleClick}>{value}</Button>;
-    </>
+    <Button
+      variant={value === 'A' ? 'outlined' : 'contained'}
+      onClick={handleClick}
+      sx={{ marginLeft: value === 'B' ? '8px' : 'none' }}
+    >
+      {value}ボタン
+    </Button>
   );
 });
 
@@ -47,10 +51,29 @@ const Field: React.FC<FieldProps> = (props) => {
 
   return (
     <>
-      <Count text="A ボタン" countState={countA} />
-      <Count text="B ボタン" countState={countB} />
-      <MemoButton value="Aボタン" handleClick={isUseCallback ? callbackIncrementA : incrementA} />
-      <MemoButton value="Bボタン" handleClick={isUseCallback ? callbackIncrementB : incrementB} />
+      {isUseCallback ? (
+        <>
+          <Count text="A ボタン" countState={countA} />
+          <p className="attention-red">レンダリングも{countA}回目</p>
+          <Count text="B ボタン" countState={countB} />
+          <p className="attention-red">レンダリングも{countB}回目</p>
+          <div className="p-4">
+            <MemoButton value="A" handleClick={callbackIncrementA} />
+            <MemoButton value="B" handleClick={callbackIncrementB} />
+          </div>
+        </>
+      ) : (
+        <>
+          <Count text="A ボタン" countState={countA} />
+          <p className="attention-red">レンダリングは{countA + countB}回目</p>
+          <Count text="B ボタン" countState={countB} />
+          <p className="attention-red">レンダリングは{countA + countB}回目</p>
+          <div className="p-4">
+            <MemoButton value="A" handleClick={incrementA} />
+            <MemoButton value="B" handleClick={incrementB} />
+          </div>
+        </>
+      )}
     </>
   );
 };
@@ -60,13 +83,13 @@ export const CallbackCounter: React.FC = () => {
     <>
       <div className="description">
         <div className="description-left">
-          <p className="description-left-p">頻繁に更新されるものの側にあるものはReact.memoでメモ化しましょう</p>
+          <p className="description-left-p">メモ化したコンポーネントに引き継ぐ関数はuseCallback化しましょう</p>
           <p className="description-left-p">
             <span className="hidden sm:inline">右</span>
-            <span className="inline sm:hidden">下</span>の例ではカウントの表記がReact.memo化されています
+            <span className="inline sm:hidden">下</span>の例ではカウントを更新する関数をuseCallback化しています
           </p>
           <p className="description-left-p">
-            React.memoが使用された方では、Aボタンクリック時にBボタンのカウント表記はレンダリングされません
+            useCallback使用時は、Aボタンクリック時にBボタンのカウント表記はレンダリングされません
           </p>
           <h3 className="description-left-h3">使いどころ</h3>
           <ul className="description-left-ul">

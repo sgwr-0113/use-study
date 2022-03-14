@@ -1,26 +1,53 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { heavyFunc } from 'utils/heavyFunc';
 
-interface FieldProps {
-  isUseMemo: boolean;
-}
-
-const Field: React.FC<FieldProps> = (props) => {
+const MemorizedField: React.FC = () => {
   const [countA, setCountA] = useState<number>(0);
   const [countB, setCountB] = useState<number>(0);
-  const { isUseMemo } = props;
+  const memorizedResult = useMemo(() => heavyFunc(countB), [countB]);
 
-  const memorizedResult: number = useMemo(() => heavyFunc(countB), [countB]);
+  // できれば初回レンダリング時にheavyFuncを呼ばないようにしたい
+  // const firstRenderRef = useRef(true);
+  // useEffect(() => {
+  //   if (firstRenderRef.current) {
+  //     firstRenderRef.current = false;
+  //     return;
+  //   }
+  // }, [countA, countB]);
+
+  return (
+    <>
+      <div className="description-right-container">
+        <h3 className="description-right-container-h3">useMemo使用</h3>
+        <p className="py-1 text-xl"> 再描画: {countA}回目</p>
+        <p className="py-1 text-xl">計算結果: {memorizedResult}</p>
+        <p className="attention-red">計算は{countB}回目</p>
+        <div className="p-4">
+          <Button variant="outlined" onClick={() => setCountA(countA + 1)}>
+            描画する
+          </Button>
+          <Button variant="contained" onClick={() => setCountB(countB + 1)} sx={{ marginLeft: '8px' }}>
+            重い計算
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const UnmemorizedField: React.FC = () => {
+  const [countA, setCountA] = useState<number>(0);
+  const [countB, setCountB] = useState<number>(0);
   const result: number = heavyFunc(countB);
 
   return (
     <>
-      <div className={isUseMemo ? 'description-right-container' : 'mt-8 sm:mt-16 description-right-container'}>
-        <h3 className="description-right-container-h3">useMemo{!isUseMemo && '非'}使用</h3>
+      <div className="mt-8 sm:mt-16 description-right-container">
+        <h3 className="description-right-container-h3">useMemo非使用</h3>
         <p className="py-1 text-xl"> 再描画: {countA}回目</p>
-        <p className="py-1 text-xl">計算結果: {isUseMemo ? memorizedResult : result}</p>
-        <p className="attention-red">計算は{isUseMemo ? countB : countA + countB}回目</p>
+        <p className="py-1 text-xl">計算結果: {result}</p>
+        <p className="attention-red">計算は{countA + countB}回目</p>
         <div className="p-4">
           <Button variant="outlined" onClick={() => setCountA(countA + 1)}>
             描画する
@@ -53,8 +80,8 @@ export const MemoResult: React.FC = () => {
           </ul>
         </div>
         <div className="description-right">
-          <Field isUseMemo={true} />
-          <Field isUseMemo={false} />
+          <MemorizedField />
+          <UnmemorizedField />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 export const heavyFunc = (parameter: number) => {
-  let i = 0;
-  while (i < 100000000) i++;
+  const start = performance.now();
+  while (performance.now() - start < 250);
+
   return parameter * parameter;
 };

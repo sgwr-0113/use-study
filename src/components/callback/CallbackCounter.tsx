@@ -6,6 +6,11 @@ interface CountProps {
   countState: number;
 }
 
+interface MemoButtonProps {
+  value: string;
+  handleClick: () => void;
+}
+
 interface FieldProps {
   isUseCallback: boolean;
 }
@@ -20,7 +25,16 @@ const Count: React.FC<CountProps> = (props) => {
   );
 };
 
-export const Field: React.FC<FieldProps> = (props) => {
+const MemoButton: React.FC<MemoButtonProps> = React.memo((props) => {
+  const { value, handleClick } = props;
+  return (
+    <>
+      <Button onClick={handleClick}>{value}</Button>;
+    </>
+  );
+});
+
+const Field: React.FC<FieldProps> = (props) => {
   const { isUseCallback } = props;
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
@@ -35,12 +49,8 @@ export const Field: React.FC<FieldProps> = (props) => {
     <>
       <Count text="A ボタン" countState={countA} />
       <Count text="B ボタン" countState={countB} />
-      <Button variant="outlined" onClick={isUseCallback ? callbackIncrementA : incrementA}>
-        Aボタン
-      </Button>
-      <Button variant="contained" onClick={isUseCallback ? callbackIncrementB : incrementB}>
-        Bボタン
-      </Button>
+      <MemoButton value="Aボタン" handleClick={isUseCallback ? callbackIncrementA : incrementA} />
+      <MemoButton value="Bボタン" handleClick={isUseCallback ? callbackIncrementB : incrementB} />
     </>
   );
 };
